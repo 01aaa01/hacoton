@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tech Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="nav-left">
+                <div class="logo">Space Market</div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="nav-items" id="navItems">
+                <a href="#" id="homeLink" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <div class="category-dropdown">
+                    <a href="#" id="categoriesBtn" class="nav-link"><i class="fas fa-th-list"></i> Categories</a>
+                    <div class="dropdown-content">
+                        <a href="#" data-category="electronics">Electronics</a>
+                        <a href="#" data-category="fashion">Fashion</a>
+                        <a href="#" data-category="sports">Sports</a>
+                        <a href="#" data-category="beauty">Beauty & Health</a>
+                        <a href="#" data-category="home">Home & Garden</a>
+                        <a href="#" data-category="toys">Toys & Games</a>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <a href="#" id="cartLink" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart <span id="cartCount">0</span></a>
+                    <a href="#" id="wishlistLink" class="nav-link"><i class="fas fa-heart"></i> Wishlist</a>
+                    <a href="#" id="loginBtn" class="nav-link"><i class="fas fa-user"></i> Login</a>
+                    <a href="#" id="signupBtn" class="nav-link"><i class="fas fa-user-plus"></i> Sign up</a>
+                    <a href="#" id="logoutBtn" class="nav-link" style="display: none;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="category-filter">
+        <button class="filter-btn active" data-category="all">All Products</button>
+        <button class="filter-btn" data-category="electronics">Electronics</button>
+        <button class="filter-btn" data-category="fashion">Fashion</button>
+        <button class="filter-btn" data-category="sports">Sports</button>
+        <button class="filter-btn" data-category="beauty">Beauty & Health</button>
+        <button class="filter-btn" data-category="home">Home & Garden</button>
+        <button class="filter-btn" data-category="toys">Toys & Games</button>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <section id="products" class="products-grid">
+            <!-- Products will be dynamically added here -->
+        </section>
+
+        <!-- Shopping Cart Section -->
+        <section id="cart" class="cart-section" style="display: none;">
+            <h2>Shopping Cart</h2>
+            <div id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: <span id="cartTotal">$0.00</span></h3>
+                <button id="checkoutBtn">Checkout</button>
+                <button id="saveForLaterBtn">Save for Later</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="./api.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/additional-products.js"></script>
+    <script src="./server.js"></script>
+    
+</body>
+</html>
